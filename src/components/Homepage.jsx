@@ -1,9 +1,8 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import Evelyn from "../images/evelyn.jpg";
 import Github from "../images/github.png";
 import Slack from "../images/slack.png";
-import Zuri from "../images/zuri_logo.png";
-import Ingressive from "../images/I4G.png";
 
 
 const Homepage = () => {
@@ -36,6 +35,7 @@ const Homepage = () => {
         <a id="book__design" className="buttons" href="https://books.zuri.team/design-rules/" target="blank" rel="noopener noreferrer">
             Design Books
           </a>
+          <Link id="contact" className="buttons" to="/contact">Contact Me</Link>
       </section>
 
       <section id="social-links" className="flex justify-center mt-10 mb-20 gap-7">
@@ -45,12 +45,6 @@ const Homepage = () => {
         <a id="github" href="https://github.com/yvehogan" target="blank" rel="noopener noreferrer" >
           <img src={Github} alt="" />
         </a>
-      </section>
-
-      <section id="footer" className="max-w-7xl flex lg:flex-row flex-col justify-between p-8 m-auto border-t border-primary">
-        <img className="lg:w-auto w-32" src={Zuri} alt="" />
-        <p className="lg:mt-0 mt-4 lg:mb-0 mb-4">HNG Internship ( Frontend Task</p>
-        <img className="lg:w-auto w-32" src={Ingressive} alt="" />
       </section>
     </>
   );
