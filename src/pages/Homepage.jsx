@@ -22,11 +22,11 @@ const Homepage = () => {
           </h1>
           <p className="py-10 text-xl max-w-xl">we provide you access to luxury and affordable houses in the metaverse, get a chance to turn your imagination to reality at your comfort zone</p>
           <div className="flex relative overflow-hidden">
-            <input type="search" className="outline-none border border-[#a3a3a3] px-1 lg:px-7w-full md:w-3/4 py-3 rounded-l-lg" id="" placeholder="Search for location" />
+            <input type="search" className="outline-none border border-[#a3a3a3] px-1 lg:px-7 w-4/5 md:w-3/4 py-3 rounded-l-lg" id="" placeholder="Search for location" />
             <button className="bg-primary absolute md:relative right-0 text-white py-3.5 px-3 md:px-8 rounded-r-lg">Search</button>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row w-full lg:w-1/2 gap-2">
+        <div className="flex flex-row w-full lg:w-1/2 gap-2 mt-16 md:mt-0">
           <div className="mt-16">
             <img src={Hero1} alt="A Metabnb" className="w-full" />
             <img src={Hero2} alt="A Metabnb" className="mt-2 w-full" />

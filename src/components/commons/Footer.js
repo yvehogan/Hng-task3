@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <>
             <section className="bg-[#1d1d1d] text-white">
-                <div className="flex gap-10 flex-col-reverse md:flex-row pt-24 pb-16 px-10 lg:px-28">
+                <div className="flex items-center gap-10 flex-col-reverse md:flex-row pt-24 pb-16 px-10 lg:px-28">
                     <div className="lg:w-2/5 mt-5 md:mt-0">
                         <img src={Logo2} alt='Metabnb logo' className="mb-10 md:mb-20" />
                         <div className="flex gap-7 mb-5 md:mb-12">

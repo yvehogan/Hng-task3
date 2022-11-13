@@ -18,7 +18,11 @@ body {
   transition: transform 0.5s cubic-bezier(0, 0.52, 0, 1);
   transform: translate3d(100%, 0, 0);
 }
-
+.header-side-link {
+  margin-top: 15px;
+  padding: 5px;
+}
 .content {
   @apply px-6 lg:px-24;
 }
+

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
 import { AiOutlineClose } from 'react-icons/ai'
 import { HiOutlineMenuAlt1 } from 'react-icons/hi';
@@ -9,32 +9,15 @@ import PropTypes from 'prop-types';
 import Logo from '../../assets/images/logo.png';
 import Wallet1 from '../../assets/images/wallet1.png'
 import Wallet2 from '../../assets/images/wallet2.png'
-import NavLink from './NavLink';
 import { toggleScroll } from '../../utilities/general';
 import Button from '../layout/Button';
 
-function Header({ solidBg }) {
+function Header() {
     const [showModal, setShowModal] = useState(false);
     const location = useLocation();
 
     const [scrolled, setScrolled] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
-
-    const modalClose = () => {
-        if (document.body.style.overflow !== "hidden") {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "scroll";
-        }
-        setShowModal(true);
-    }
-
-    const closeModal = () => {
-        setShowModal(false)
-        window.location.reload(false);
-
-    }
-
 
     useEffect(() => {
         const func = () => setScrolled(window.pageYOffset > 30);
@@ -69,17 +52,17 @@ function Header({ solidBg }) {
                         </div>
                         <div className="nav-links hidden lg:block">
                             <ul className="flex items-center space-x-8">
-                                <NavLink link="/" className="font-semibold">Home</NavLink>
-                                <NavLink link="/place-to-stay" className="font-semibold">Place to Stay</NavLink>
-                                <NavLink className="font-semibold">NFTs</NavLink>
-                                <NavLink className="font-semibold">Community</NavLink>
+                                <Link to="/" className="font-semibold">Home</Link>
+                                <Link to="/place-to-stay" className="font-semibold">Place to Stay</Link>
+                                <Link className="font-semibold">NFTs</Link>
+                                <Link className="font-semibold">Community</Link>
                             </ul>
                         </div>
                         <Button
                             className="hidden lg:block"
                             bgColor="bg-primary"
                             textColor="text-white"
-                            onClick={modalClose}
+                            onClick={() => setShowModal(true)}
                         >
                             Connect wallet
                         </Button>
@@ -139,7 +122,7 @@ function Header({ solidBg }) {
                                 className="mt-10"
                                 bgColor="bg-primary"
                                 textColor="text-white"
-                                onClick={modalClose}
+                                onClick={() => (setShowModal(true))}
                             >
                                 Connect wallet
                             </Button>
@@ -158,7 +141,7 @@ function Header({ solidBg }) {
                                     <h3 className="text-black font-semibold">Connect Wallet</h3>
                                     <AiOutlineClose
                                         className="cursor-pointer"
-                                        onClick={closeModal}
+                                        onClick={() => setShowModal(false)}
                                     />
                                 </div>
                                 <div className="relative p-6 flex-auto">
