@@ -21,12 +21,18 @@ function Header({ solidBg }) {
     const [showMenu, setShowMenu] = useState(false);
 
     const modalClose = () => {
-        setShowModal(true);
         if (document.body.style.overflow !== "hidden") {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "scroll";
         }
+        setShowModal(true);
+    }
+
+    const closeModal = () => {
+        setShowModal(false)
+        window.location.reload(false);
+
     }
 
 
@@ -152,7 +158,7 @@ function Header({ solidBg }) {
                                     <h3 className="text-black font-semibold">Connect Wallet</h3>
                                     <AiOutlineClose
                                         className="cursor-pointer"
-                                        onClick={() => setShowModal(false)}
+                                        onClick={closeModal}
                                     />
                                 </div>
                                 <div className="relative p-6 flex-auto">
